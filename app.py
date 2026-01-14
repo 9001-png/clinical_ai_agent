@@ -1,10 +1,19 @@
 import streamlit as st
-import pickle
+import pandas as pd
 import numpy as np
-
-model = pickle.load(open("disease_model.pkl", "rb"))
+from sklearn.tree import DecisionTreeClassifier
 
 st.title("🩺 Clinical Care & Diagnostics AI Agent")
+
+# Load dataset
+data = pd.read_csv("symptoms_dataset.csv")
+
+X = data.drop("disease", axis=1)
+y = data["disease"]
+
+# Train model
+model = DecisionTreeClassifier()
+model.fit(X, y)
 
 st.write("Enter patient symptoms:")
 
