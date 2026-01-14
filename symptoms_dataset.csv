@@ -1,0 +1,6 @@
+fever,cough,fatigue,headache,disease
+1,1,1,0,Flu
+1,0,1,1,Viral Fever
+0,1,0,0,Cold
+0,0,1,1,Migraine
+1,1,0,0,COVID-19
